@@ -1,0 +1,6 @@
+<?php
+
+$cadenaDeTexto = "Leonardo.delBrio";
+
+
+?>
