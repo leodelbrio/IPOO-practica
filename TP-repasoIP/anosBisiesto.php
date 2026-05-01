@@ -24,6 +24,6 @@ if ($anio % 4 == 0) {
         };
     };
 }else {
-    echo "nao noa";
+    echo "nao noa". "\n";
 };
 ?>
