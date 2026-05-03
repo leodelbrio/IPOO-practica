@@ -7,42 +7,49 @@ echo strlen($cadenaDeTexto) . "\n";
 //1. Dada una cadena de caracteres terminada en punto retornar la cantidad de letras que contiene la cadena.
 
 $cadenaLetrasPunto = "hola.";
+$primerCont = 0;
 for ($i = 0; $i < strlen($cadenaLetrasPunto); $i++){
-    echo $cadenaLetrasPunto[$i];
+    if (ctype_alpha($cadenaLetrasPunto[$i]))
+    $primerCont = $primerCont + 1;
 };
+
+echo $primerCont;
 
 echo "\n";
 
 $cadenaPruebaPunto = "Hola mundo.";
+$contadorCadenaPrueba = 0;
 for ($l = 0; $l < strlen($cadenaPruebaPunto); $l++){
     if (ctype_alpha($cadenaPruebaPunto[$l])){
-        echo strlen($cadenaPruebaPunto[$l]);
+        $contadorCadenaPrueba = $contadorCadenaPrueba + 1; 
     };
 };
+echo $contadorCadenaPrueba;
 
 echo "\n";
 
 //2. Dado un texto terminado en / y un caracter, determinar cuántas veces aparece ese caracter en la cadena.
 
-$textoEnBarra = "leonardo\del\brio";
+$textoEnBarra = "leonardo/del/brio";
+$caracterBuscado = "/";
+$canDe = 0;
 for ($s = 0; $s < strlen($textoEnBarra); $s++){
-    if (ctype_alpha($textoEnBarra[$s])){
-    }else {
-        $canDe = 0;
-        echo $canDe;
+    if ($textoEnBarra[$s] == $caracterBuscado){
+        $canDe = $canDe + 1;
+        };
     };
-};
+echo $canDe;
 
 echo "\n";
 
 //3. Dada 2 cadenas cadena1 y cadena2 retornar verdadero si cadena2 se encuentra en cadena1 y falso en caso
 //contrario.
 
-$cadenaPancheria = ["pizza" , "hamburguesa" , "pancho"];
 $cadenaPizza = "pizza";
 $cadenaGuiso = "guiso";
+$cadenaPizza2 = "pizza";
 
-if (str_contains($cadenaPizza, "pizza")){
+if (str_contains($cadenaPizza, $cadenaPizza2)){
     echo "sisi piza esta";
 }else{
     echo "no, no encotramos pizza";
@@ -50,7 +57,7 @@ if (str_contains($cadenaPizza, "pizza")){
 
 echo "\n";
 
-if (str_contains($cadenaGuiso, "pizza")){
+if (str_contains($cadenaGuiso, $cadenaPizza)){
     echo "sisi esta";
 }else{
     echo "nono esta";
@@ -64,35 +71,41 @@ $cadenaParaContar = "murcielago";
 echo strlen($cadenaParaContar);
 
 echo "\n";
+$concon = 0;
 
 for ($c = 0; $c < strlen($cadenaParaContar); $c++) { 
-    echo $c;
-}
+    $concon = $concon + 1;
+    };
+echo $concon;
 
 echo "\n";
 
 //5. Dada 2 cadenas cadena1 y cadena2 retornar la cadena de mayor longitud, invocar al método implementado
 //para el inciso anterior
 
-$cadena11 = "murcielago";
-$cadena22 = "mur";
+$concon1 = 0;
+$concon2 = 0;
 
-echo compararCadena($cadena11, $cadena22);
+$animal1 = "murcielago";
+$animal2 = "leon";
 
-function compararCadena ($cad11, $cad22){
-    for ($f=0; $f < strlen($cad11); $f++) { 
-        $leng11 = $f;
+echo animalLargo ($animal1, $animal2, $concon1, $concon2);
+
+function animalLargo ($an1, $an2, $conto1, $conto2){
+    for ($a=0; $a < $an1; $a++) { 
+        $conto1 = $conto1 + 1;
     };
-        for ($z=0; $z < strlen($cad22); $z++) { 
-        $leng22 = $z;
+    for ($b=0; $b < $an2; $b++) { 
+        $conto2 = $conto2 + 1;
     };
 
-    if ($leng11 > $leng22){
-        $final = "es mas larga la 1" . "\n";
-    }else{
-        $final = "es mas larga la 2" . "\n";
+    if ($conto1 > $conto2) {
+        $final = "El animal uno es mas largo!";
+    } else {
+        $final = "El animal dos es mas largo!";
     };
 
     return $final;
+    
 };
 ?>
